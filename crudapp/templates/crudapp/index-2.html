@@ -1,0 +1,13 @@
+{% extends 'crudapp/base.html' %} {% block content %}
+<h4 class="alert alert-success col-4 text-center">Update Employee</h4>
+<div class="container">
+  <div class="col-8 offset-2">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" value="Update" class="btn btn-primary my-3" />
+       <a href="/" class="btn btn-info">Back To Form</a>
+    </form>
+  </div>
+</div>
+{% endblock content %}
