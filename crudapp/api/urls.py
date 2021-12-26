@@ -7,5 +7,6 @@ router = DefaultRouter()
 router.register('userapi',views.UserApi,basename="userapi")
 
 urlpatterns = [
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('auth/',include('rest_framework.urls'))
 ]
