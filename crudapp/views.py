@@ -27,8 +27,7 @@ def index(request):
 
 
 def deletedata(request,id):
-    if request.method =="POST":
-        del_id = users.objects.get(id=id)
+    del_id = users.objects.get(id=id)
     del_id.delete()
     return HttpResponseRedirect('/')
 
@@ -42,7 +41,7 @@ def updatedata(request,id):
         if obj1.is_valid():
             obj1.save()
 
-    # when methon is get or when clicked on edit  
+    # when method is get or when clicked on edit  
     obj3 = users.objects.get(id=id)
     obj2 = employee(instance=obj3)
     return render(request,'crudapp/index-2.html',{'form':obj2})
